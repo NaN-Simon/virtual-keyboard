@@ -18,6 +18,7 @@
   --white: rgb(255, 255, 255);
   --lightwhite: rgb(225, 225, 225);
   --lightgrey: rgb(99, 100, 104);
+  --hover-color: rgb(0, 185, 185);
 }
 body {
   font-family: Roboto, sans-serif;
@@ -56,6 +57,10 @@ body {
   margin: 4px;
   background-color: var(--white);
   transition: 0.3s;
+}
+.keys:hover{
+  background-color: var(--hover-color);
+  cursor: pointer;
 }
 .keys-backspace {
   width: 100px;
@@ -100,4 +105,8 @@ body {
 }
 .right-ctrl {
   width: 50px;
+}
+.active{
+  background-color: #181010;
+  color: var(--white);
 }
