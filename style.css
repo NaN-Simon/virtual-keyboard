@@ -6,18 +6,98 @@
 }
 *,
 *::before,
-*::after{
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-body{
-  font-family: Roboto;
 }
 :root {
   --classic: rgb(58, 66, 78);
   --darkgrey: rgb(36, 36, 36);
   --mediumgrey: rgb(28, 35, 46);
   --white: rgb(255, 255, 255);
-  --lightgrey: rgb(99,100,104);
+  --lightwhite: rgb(225, 225, 225);
+  --lightgrey: rgb(99, 100, 104);
+}
+body {
+  font-family: Roboto, sans-serif;
+  transition: 0.3s;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin:  0 10px;
+}
+.text {
+  margin: 10px;
+}
+.keyboard_wrapper {
+  max-width: 732px;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  background-color: var(--lightwhite);
+  padding: 4px;
+}
+.keyboard_keys {
+}
+.row {
+  display: flex;
+}
+.keys {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  margin: 4px;
+  background-color: var(--white);
+  transition: 0.3s;
+}
+.keys-backspace {
+  width: 100px;
+}
+.keys-tab {
+  width: 70px;
+}
+.keys-slash {
+  width: 70px;
+}
+.keys-capslock {
+  width: 80px;
+}
+.keys-enter {
+  width: 108px;
+}
+.keys-shift {
+}
+.left-shift {
+  width: 90px;
+}
+.right-shift {
+  width: 146px;
+}
+.keys-ctrl {
+}
+.left-ctrl {
+  width: 50px;
+}
+.keys-space{
+  width: 396px;
+}
+.keys-win {
+}
+.keys-alt {
+}
+.left-alt {
+  width: 50px;
+}
+.right-alt {
+  width: 50px;
+}
+.right-ctrl {
+  width: 50px;
 }
