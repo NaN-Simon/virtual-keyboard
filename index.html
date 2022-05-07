@@ -1,101 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <div class="keyboard__wrapper">
-      <div class="keyboard__input">
-        <textarea
-          class="keyboard__input-textarea"
-          name=""
-          id=""
-          cols="30"
-          rows="10"
-        ></textarea>
-      </div>
-      <div class="keyboard__btns">
-        <ul class="keyboard__btns-line-1">
-          <li class="btn-small keyboard__btns-acute">`</li>
-          <li class="btn-small">1</li>
-          <li class="btn-small">2</li>
-          <li class="btn-small">3</li>
-          <li class="btn-small">4</li>
-          <li class="btn-small">5</li>
-          <li class="btn-small">6</li>
-          <li class="btn-small">7</li>
-          <li class="btn-small">8</li>
-          <li class="btn-small">9</li>
-          <li class="btn-small">0</li>
-          <li class="btn-small">-</li>
-          <li class="btn-small">=</li>
-          <li class="btn-big keyboard__btns-backspace">Backspace</li>
-        </ul>
-        <ul class="keyboard__btns-line-2">
-          <li class="btn-medium keyboard__btns-tab">Tab</li>
-          <li class="btn-small">q</li>
-          <li class="btn-small">w</li>
-          <li class="btn-small">e</li>
-          <li class="btn-small">r</li>
-          <li class="btn-small">t</li>
-          <li class="btn-small">y</li>
-          <li class="btn-small">u</li>
-          <li class="btn-small">i</li>
-          <li class="btn-small">o</li>
-          <li class="btn-small">p</li>
-          <li class="btn-small">[</li>
-          <li class="btn-small">]</li>
-          <li class="btn-small">\</li>
-          <li class="keyboard__btns-del">Del</li>
-        </ul>
-        <ul class="keyboard__btns-line-3">
-          <li class="keyboard__btns-capslock btn-big">Capslock</li>
-          <li class="btn-small">a</li>
-          <li class="btn-small">s</li>
-          <li class="btn-small">d</li>
-          <li class="btn-small">f</li>
-          <li class="btn-small">g</li>
-          <li class="btn-small">h</li>
-          <li class="btn-small">j</li>
-          <li class="btn-small">k</li>
-          <li class="btn-small">l</li>
-          <li class="btn-small">;</li>
-          <li class="btn-small">'</li>
-          <li class="keyboard__btns-enter">Enter</li>
-        </ul>
-        <ul class="keyboard__btns-line-4">
-          <li class="keyboard__btns-left-shift btn-big">Shift</li>
-          <li class="btn-small">\</li>
-          <li class="btn-small">z</li>
-          <li class="btn-small">x</li>
-          <li class="btn-small">c</li>
-          <li class="btn-small">v</li>
-          <li class="btn-small">b</li>
-          <li class="btn-small">n</li>
-          <li class="btn-small">m</li>
-          <li class="btn-small">,</li>
-          <li class="btn-small">.</li>
-          <li class="btn-small">/</li>
-          <li class="btn-small keyboard__btns-up-arrow">↑</li>
-          <li class="btn-small keyboard__btns-right-shift">Shift</li>
-        </ul>
-        <ul class="keyboard__btns-line-5">
-          <li class="keyboard__btns-left-ctrl">Ctrl</li>
-          <li class="keyboard__btns-left-win btn-small">Win</li>
-          <li class="keyboard__btns-left-alt btn-small">Alt</li>
-          <li class="keyboard__btns-space"></li>
-          <li class="keyboard__btns-right-alt btn-small">Alt</li>
-          <li class="keyboard__btns-right-ctrl">Ctrl</li>
-          <li class="keyboard__btns-left-arrow btn-small">←</li>
-          <li class="keyboard__btns-down-arrow btn-small">↓</li>
-          <li class="keyboard__btns-right-arrow btn-small">→</li>
-        </ul>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Virtual_Keyboard</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+  <div class="container">
+    <div class="keyboard_wrapper">
+      <div class="keyboard_keys">
+        <div class="row">
+          <div class="keys">`</div>
+          <div class="keys">1</div>
+          <div class="keys">2</div>
+          <div class="keys">3</div>
+          <div class="keys">4</div>
+          <div class="keys">5</div>
+          <div class="keys">6</div>
+          <div class="keys">7</div>
+          <div class="keys">8</div>
+          <div class="keys">9</div>
+          <div class="keys">0</div>
+          <div class="keys">-</div>
+          <div class="keys">=</div>
+          <div class="keys keys-backspace">Backspace</div>
+          <div class="keys"></div>
+        </div>
+        <div class="row">
+          <div class="keys keys-tab">Tab</div>
+          <div class="keys">Q</div>
+          <div class="keys">W</div>
+          <div class="keys">E</div>
+          <div class="keys">R</div>
+          <div class="keys">T</div>
+          <div class="keys">Y</div>
+          <div class="keys">U</div>
+          <div class="keys">I</div>
+          <div class="keys">O</div>
+          <div class="keys">P</div>
+          <div class="keys">[</div>
+          <div class="keys">]</div>
+          <div class="keys keys-slash">\</div>
+        </div>
+        <div class="row">
+          <div class="keys keys-capslock">CapsLock</div>
+          <div class="keys">A</div>
+          <div class="keys">S</div>
+          <div class="keys">D</div>
+          <div class="keys">F</div>
+          <div class="keys">G</div>
+          <div class="keys">H</div>
+          <div class="keys">J</div>
+          <div class="keys">K</div>
+          <div class="keys">L</div>
+          <div class="keys">;</div>
+          <div class="keys">'</div>
+          <div class="keys keys-enter">Enter</div>
+        </div>
+        <div class="row">
+          <div class="keys keys-shift left-shift">Shift</div>
+          <div class="keys">Z</div>
+          <div class="keys">X</div>
+          <div class="keys">C</div>
+          <div class="keys">V</div>
+          <div class="keys">B</div>
+          <div class="keys">N</div>
+          <div class="keys">M</div>
+          <div class="keys">,</div>
+          <div class="keys">.</div>
+          <div class="keys">/</div>
+          <div class="keys keys-shift right-shift">Shift</div>
+        </div>
+        <div class="row">
+          <div class="keys keys-ctrl left-ctrl">Ctrl</div>
+          <div class="keys keys-win">Win</div>
+          <div class="keys keys-alt left-alt">Alt</div>
+          <div class="keys">Space</div>
+          <div class="keys keys-alt right-alt">Alt</div>
+          <div class="keys">Fn</div>
+          <div class="keys keys-ctrl right-ctrl">Ctrl</div>
+        </div>
       </div>
     </div>
-    <script src="script.js"></script>
-  </body>
+  </div>
+  <script src="script.js"></script>
+</body>
 </html>
