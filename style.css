@@ -1,3 +1,10 @@
+*,
+*::before,
+*::after{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 :root {
   --classic: rgb(58, 66, 78);
   --darkgrey: rgb(36, 36, 36);
