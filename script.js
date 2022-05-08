@@ -22,7 +22,7 @@ for (let i = 0; i < keys.length; i++) {
 }
 
 window.addEventListener("keydown", function (event) {
-  console.log(event.code);
+  // console.log(event.code);
   for (let i = 0; i < keys.length; i++) {
     if (
       event.key == keys[i].getAttribute("keyname") ||
@@ -73,9 +73,18 @@ window.addEventListener("keydown", function (event) {
     if (event.code == "CapsLock") {
       if (event.getModifierState("CapsLock")) {
         keysCapslock.classList.add("active");
+        toUppercase();
       } else {
         keysCapslock.classList.remove("active");
+        toLowercase();
       }
+    }
+    if (event.code == "ControlLeft") {
+      window.addEventListener("keyup", function (e) {
+        if (e.code == "ShiftLeft") {
+          console.log("work");
+        }
+      });
     }
   }
 });
@@ -100,19 +109,15 @@ window.addEventListener("keyup", function (event) {
     }
     if (event.code == "ControlLeft") {
       leftCtrl.classList.remove("active");
-      console.log("ctrl l");
     }
     if (event.code == "ControlRight") {
       rightCtrl.classList.remove("active");
-      console.log("ctrl l");
     }
     if (event.code == "AltLeft") {
       leftAlt.classList.remove("active");
-      console.log("ctrl l");
     }
     if (event.code == "AltRight") {
       rightAlt.classList.remove("active");
-      console.log("ctrl l");
     }
     if (event.code == "ArrowLeft") {
       keysLeft.classList.remove("active");
@@ -128,7 +133,7 @@ window.addEventListener("keyup", function (event) {
     }
   }
 });
-
+let capsLockFlag = false;
 text.value = "";
 window.addEventListener("click", function (event) {
   const current = event.target;
@@ -139,6 +144,35 @@ window.addEventListener("click", function (event) {
     if (current.innerHTML == "") {
       text.value += " ";
     }
-    console.log(current.innerHTML);
+
+    if (current.innerHTML == "CapsLock") {
+      if (capsLockFlag) {
+        keysCapslock.classList.add("active");
+        toUppercase();
+        capsLockFlag = false;
+      } else {
+        keysCapslock.classList.remove("active");
+        toLowercase();
+        capsLockFlag = true;
+      }
+    }
+    if (current.innerHTML == "Backspace"){
+      
+    }
   }
 });
+
+function toLowercase() {
+  for (let key of keys) {
+    if (key.getAttribute("lowercasename").length == 1) {
+      key.innerHTML = key.getAttribute("lowercasename");
+    }
+  }
+}
+function toUppercase() {
+  for (let key of keys) {
+    if (key.getAttribute("keyname").length == 1) {
+      key.innerHTML = key.getAttribute("keyname");
+    }
+  }
+}
