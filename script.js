@@ -8,6 +8,12 @@ const leftCtrl = document.querySelector(".left-ctrl");
 const rightCtrl = document.querySelector(".right-ctrl");
 const leftAlt = document.querySelector(".left-alt");
 const rightAlt = document.querySelector(".right-alt");
+const keysDelete = document.querySelector(".keys-delete");
+const keysLeft = document.querySelector('.keys-left')
+const keysRight = document.querySelector('.keys-right')
+const keysUp = document.querySelector('.keys-up')
+const keysDown = document.querySelector('.keys-down')
+
 for (let i = 0; i < keys.length; i++) {
   keys[i].setAttribute("keyname", keys[i].innerHTML);
   keys[i].setAttribute("lowercasename", keys[i].innerHTML.toLowerCase());
@@ -24,6 +30,9 @@ window.addEventListener("keydown", function (event) {
     }
     if (event.code == "Space") {
       keysSpace.classList.add("active");
+    }
+    if (event.code == "Delete") {
+      keysDelete.classList.add("active");
     }
     if (event.code == "CapsLock") {
       if (event.getModifierState("CapsLock")) {
@@ -54,6 +63,18 @@ window.addEventListener("keydown", function (event) {
       rightAlt.classList.add("active");
       leftAlt.classList.remove("active");
     }
+    if (event.code == "ArrowLeft") {
+      keysLeft.classList.add("active");
+    }
+    if (event.code == "ArrowRight") {
+      keysRight.classList.add("active");
+    }
+    if (event.code == "ArrowUp") {
+      keysUp.classList.add("active");
+    }
+    if (event.code == "ArrowDown") {
+      keysDown.classList.add("active");
+    }
   }
 });
 
@@ -72,6 +93,9 @@ window.addEventListener("keyup", function (event) {
     if (event.code == "Space") {
       keysSpace.classList.remove("active");
     }
+    if (event.code == "Delete") {
+      keysDelete.classList.remove("active");
+    }
     if (event.code == "ControlLeft") {
       leftCtrl.classList.remove("active");
       console.log("ctrl l");
@@ -87,6 +111,18 @@ window.addEventListener("keyup", function (event) {
     if (event.code == "AltRight") {
       rightAlt.classList.remove("active");
       console.log("ctrl l");
+    }
+    if (event.code == "ArrowLeft") {
+      keysLeft.classList.remove("active");
+    }
+    if (event.code == "ArrowRight") {
+      keysRight.classList.remove("active");
+    }
+    if (event.code == "ArrowUp") {
+      keysUp.classList.remove("active");
+    }
+    if (event.code == "ArrowDown") {
+      keysDown.classList.remove("active");
     }
   }
 });

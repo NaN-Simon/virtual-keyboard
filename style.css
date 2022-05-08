@@ -36,7 +36,7 @@ body {
   margin: 10px;
 }
 .keyboard_wrapper {
-  max-width: 732px;
+  max-width: 722px;
   width: 100%;
   position: relative;
   overflow: hidden;
@@ -63,27 +63,27 @@ body {
   cursor: pointer;
 }
 .keys-backspace {
-  width: 100px;
+  width: 90px;
 }
 .keys-tab {
-  width: 70px;
+  width: 75px;
 }
 .keys-slash {
-  width: 70px;
+  width: 40px;
 }
 .keys-capslock {
-  width: 80px;
+  width: 95px;
 }
 .keys-enter {
-  width: 108px;
+  width: 85px;
 }
 .keys-shift {
 }
 .left-shift {
-  width: 90px;
+  width: 120px;
 }
 .right-shift {
-  width: 146px;
+  width: 50px;
 }
 .keys-ctrl {
 }
@@ -91,7 +91,7 @@ body {
   width: 50px;
 }
 .keys-space{
-  width: 396px;
+  min-width: 225px;
 }
 .keys-win {
 }
