@@ -1,3 +1,4 @@
+const keyboard = document.querySelector(".keyboard-wrapper");
 const keys = document.querySelectorAll(".keys");
 const keysTab = document.querySelector(".keys-tab");
 const keysSpace = document.querySelector(".keys-space");
@@ -9,10 +10,11 @@ const rightCtrl = document.querySelector(".right-ctrl");
 const leftAlt = document.querySelector(".left-alt");
 const rightAlt = document.querySelector(".right-alt");
 const keysDelete = document.querySelector(".keys-delete");
-const keysLeft = document.querySelector('.keys-left')
-const keysRight = document.querySelector('.keys-right')
-const keysUp = document.querySelector('.keys-up')
-const keysDown = document.querySelector('.keys-down')
+const keysLeft = document.querySelector(".keys-left");
+const keysRight = document.querySelector(".keys-right");
+const keysUp = document.querySelector(".keys-up");
+const keysDown = document.querySelector(".keys-down");
+const text = document.querySelector(".text");
 
 for (let i = 0; i < keys.length; i++) {
   keys[i].setAttribute("keyname", keys[i].innerHTML);
@@ -33,13 +35,6 @@ window.addEventListener("keydown", function (event) {
     }
     if (event.code == "Delete") {
       keysDelete.classList.add("active");
-    }
-    if (event.code == "CapsLock") {
-      if (event.getModifierState("CapsLock")) {
-        keysCapslock.classList.add("active");
-      } else {
-        keysCapslock.classList.remove("active");
-      }
     }
     if (event.code == "ShiftLeft") {
       rightShift.classList.remove("active");
@@ -74,6 +69,13 @@ window.addEventListener("keydown", function (event) {
     }
     if (event.code == "ArrowDown") {
       keysDown.classList.add("active");
+    }
+    if (event.code == "CapsLock") {
+      if (event.getModifierState("CapsLock")) {
+        keysCapslock.classList.add("active");
+      } else {
+        keysCapslock.classList.remove("active");
+      }
     }
   }
 });
@@ -124,5 +126,19 @@ window.addEventListener("keyup", function (event) {
     if (event.code == "ArrowDown") {
       keysDown.classList.remove("active");
     }
+  }
+});
+
+text.value = "";
+window.addEventListener("click", function (event) {
+  const current = event.target;
+  if (event.target.closest(".keyboard-wrapper")) {
+    if (current.innerHTML.length == 1) {
+      text.value += current.innerHTML;
+    }
+    if (current.innerHTML == "") {
+      text.value += " ";
+    }
+    console.log(current.innerHTML);
   }
 });
