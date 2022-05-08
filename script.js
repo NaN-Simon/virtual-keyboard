@@ -82,7 +82,7 @@ window.addEventListener("keydown", function (event) {
     if (event.code == "ControlLeft") {
       window.addEventListener("keyup", function (e) {
         if (e.code == "ShiftLeft") {
-          console.log("work");
+          toChangeKeys()
         }
       });
     }
@@ -145,6 +145,10 @@ window.addEventListener("click", function (event) {
       text.value += " ";
     }
 
+    if(current.innerHTML == "Lang"){
+      console.log('asd')
+      toChangeKeys()
+    }
     if (current.innerHTML == "CapsLock") {
       if (capsLockFlag) {
         keysCapslock.classList.add("active");
@@ -156,8 +160,14 @@ window.addEventListener("click", function (event) {
         capsLockFlag = true;
       }
     }
-    if (current.innerHTML == "Backspace"){
-      
+    if (current.innerHTML == "Backspace" && text.value !== ""){
+      text.value=text.value.substring(0,text.value.length-1)
+    }
+    if (current.innerHTML == "") {
+      keysSpace.classList.add("active");
+      setTimeout(()=>{
+        keysSpace.classList.remove("active");
+      },400)
     }
   }
 });
@@ -176,3 +186,13 @@ function toUppercase() {
     }
   }
 }
+function toChangeKeys(){
+  for(let key of keys){
+    if (key.getAttribute("ru")){
+      key.innerHTML = key.getAttribute("ru")
+    }
+  }
+}
+
+
+window.text=text;
