@@ -18,8 +18,20 @@ const text = document.querySelector(".text");
 const keysBackspace = document.querySelector(".keys-backspace");
 
 for (let i = 0; i < keys.length; i++) {
-  keys[i].setAttribute("keyname", keys[i].innerHTML);
-  keys[i].setAttribute("lowercasename", keys[i].innerHTML.toLowerCase());
+  if (
+    keys[i].innerHTML.length == 1 &&
+    keys[i].innerHTML.match(/[a-zа-яё;',.]/i)
+  ) {
+    keys[i].setAttribute("keyname", keys[i].innerHTML);
+    keys[i].setAttribute(
+      "lowercasename",
+      keys[i].getAttribute("en").toLowerCase()
+    );
+    keys[i].setAttribute(
+      "rulowercasename",
+      keys[i].getAttribute("ru").toLowerCase()
+    );
+  }
 }
 
 window.addEventListener("keydown", function (event) {
@@ -90,7 +102,7 @@ window.addEventListener("keydown", function (event) {
             toRu();
             langFlag = true;
           }
-        } 
+        }
       };
     }
   }
@@ -191,15 +203,19 @@ window.addEventListener("click", function (event) {
 
 function toLowercase() {
   for (let key of keys) {
-    if (key.getAttribute("lowercasename").length == 1) {
-      key.innerHTML = key.getAttribute("lowercasename");
+    if (key.getAttribute("lowercasename") != null) {
+      if (key.getAttribute("lowercasename").match(/[a-zа-яё;',.]/i)) {
+        key.innerHTML = key.getAttribute("lowercasename");
+      }
     }
   }
 }
 function toUppercase() {
   for (let key of keys) {
-    if (key.getAttribute("keyname").length == 1) {
-      key.innerHTML = key.getAttribute("keyname");
+    if (key.getAttribute("keyname") != null) {
+      if (key.getAttribute("keyname").match(/[a-zа-яё;',.]/i)) {
+        key.innerHTML = key.getAttribute("keyname");
+      }
     }
   }
 }

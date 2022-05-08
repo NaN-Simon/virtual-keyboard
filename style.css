@@ -115,6 +115,7 @@ body {
   width: 50px;
 }
 .active {
-  background-color: #181010;
+  /* background-color: #181010; */
+  background-color: var(--hover-color);
   color: var(--white);
 }
