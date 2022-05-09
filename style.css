@@ -18,6 +18,7 @@
   --white: rgb(255, 255, 255);
   --lightwhite: rgb(225, 225, 225);
   --lightgrey: rgb(99, 100, 104);
+  --hover-color: rgb(0, 185, 185);
 }
 body {
   font-family: Roboto, sans-serif;
@@ -29,20 +30,28 @@ body {
   align-items: center;
   justify-content: center;
   height: 100vh;
-  margin:  0 10px;
+  margin: 0 10px;
 }
 .text {
+  max-width: 722px;
+  width: 100%;
+  min-height: 50px;
+  border: none;
+  outline: none;
   margin: 10px;
+  padding: 10px;
+  background-color: var(--lightwhite);
+  font-size: 20px;
 }
-.keyboard_wrapper {
-  max-width: 732px;
+.keyboard-wrapper {
+  max-width: 722px;
   width: 100%;
   position: relative;
   overflow: hidden;
   background-color: var(--lightwhite);
   padding: 4px;
 }
-.keyboard_keys {
+.keyboard-keys {
 }
 .row {
   display: flex;
@@ -57,36 +66,40 @@ body {
   background-color: var(--white);
   transition: 0.3s;
 }
+.keys:hover {
+  background-color: var(--hover-color);
+  cursor: pointer;
+}
 .keys-backspace {
-  width: 100px;
+  width: 90px;
 }
 .keys-tab {
-  width: 70px;
+  width: 75px;
 }
 .keys-slash {
-  width: 70px;
+  width: 40px;
 }
 .keys-capslock {
-  width: 80px;
+  width: 95px;
 }
 .keys-enter {
-  width: 108px;
+  width: 85px;
 }
 .keys-shift {
 }
 .left-shift {
-  width: 90px;
+  width: 120px;
 }
 .right-shift {
-  width: 146px;
+  width: 85px;
 }
 .keys-ctrl {
 }
 .left-ctrl {
   width: 50px;
 }
-.keys-space{
-  width: 396px;
+.keys-space {
+  min-width: 225px;
 }
 .keys-win {
 }
@@ -100,4 +113,9 @@ body {
 }
 .right-ctrl {
   width: 50px;
+}
+.active {
+  /* background-color: #181010; */
+  background-color: var(--hover-color);
+  color: var(--white);
 }
