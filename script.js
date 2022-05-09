@@ -165,15 +165,6 @@ window.addEventListener("click", function (event) {
       text.value += " ";
     }
 
-    if (current.innerHTML == "Lang") {
-      if (langFlag) {
-        toEn();
-        langFlag = false;
-      } else {
-        toRu();
-        langFlag = true;
-      }
-    }
     if (current.innerHTML == "CapsLock") {
       if (capsLockFlag) {
         keysCapslock.classList.add("active");
@@ -198,8 +189,37 @@ window.addEventListener("click", function (event) {
         keysSpace.classList.remove("active");
       }, 400);
     }
+
+    if (current.innerHTML == "Lang") {
+      if (langFlag || localStorage.getItem("language") === "russian") {
+        console.log('asd111')
+        localStorage.removeItem("language");
+        toEn();
+        langFlag = false;
+      } else {
+        console.log('asd222')
+        localStorage.setItem("language", "russian");
+        toRu();
+        langFlag = true;
+      }
+      // if (localStorage.getItem("language") === "russian") {
+      //   localStorage.removeItem("russian");
+      // } else {
+      //   localStorage.setItem("language", "russian");
+      // }
+      toChangeLang()
+    }
   }
 });
+
+function toChangeLang() {
+  if (localStorage.getItem("language") === "russian") {
+    toRu()
+  } else {
+    toEn()
+  }
+}
+toChangeLang();
 
 function toLowercase() {
   for (let key of keys) {
@@ -231,7 +251,7 @@ function toUppercase() {
         if (key.getAttribute("keyname").match(/[a-zа-яё;',.]/i)) {
           key.innerHTML = key.getAttribute("keyname");
         }
-      } 
+      }
     }
   }
 }
