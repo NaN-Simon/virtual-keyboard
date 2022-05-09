@@ -203,19 +203,35 @@ window.addEventListener("click", function (event) {
 
 function toLowercase() {
   for (let key of keys) {
-    if (key.getAttribute("lowercasename") != null) {
-      if (key.getAttribute("lowercasename").match(/[a-zа-яё;',.]/i)) {
-        key.innerHTML = key.getAttribute("lowercasename");
+    if (langFlag) {
+      if (key.getAttribute("rulowercasename") != null) {
+        if (key.getAttribute("rulowercasename").match(/[a-zа-яё;',.]/i)) {
+          key.innerHTML = key.getAttribute("rulowercasename");
+        }
+      }
+    } else {
+      if (key.getAttribute("lowercasename") != null) {
+        if (key.getAttribute("lowercasename").match(/[a-zа-яё;',.]/i)) {
+          key.innerHTML = key.getAttribute("lowercasename");
+        }
       }
     }
   }
 }
 function toUppercase() {
   for (let key of keys) {
-    if (key.getAttribute("keyname") != null) {
-      if (key.getAttribute("keyname").match(/[a-zа-яё;',.]/i)) {
-        key.innerHTML = key.getAttribute("keyname");
+    if (langFlag) {
+      if (key.getAttribute("ru") != null) {
+        if (key.getAttribute("ru").match(/[a-zа-яё;',.]/i)) {
+          key.innerHTML = key.getAttribute("ru");
+        }
       }
+    } else {
+      if (key.getAttribute("keyname") != null) {
+        if (key.getAttribute("keyname").match(/[a-zа-яё;',.]/i)) {
+          key.innerHTML = key.getAttribute("keyname");
+        }
+      } 
     }
   }
 }
