@@ -35,7 +35,7 @@ body {
 .text {
   max-width: 722px;
   width: 100%;
-  min-height: 50px;
+  min-height: 80px;
   border: none;
   outline: none;
   margin: 10px;
@@ -115,7 +115,9 @@ body {
   width: 50px;
 }
 .active {
-  /* background-color: #181010; */
   background-color: var(--hover-color);
   color: var(--white);
+}
+.discription{
+  margin-top: 20px;
 }

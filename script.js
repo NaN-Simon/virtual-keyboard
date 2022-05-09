@@ -16,6 +16,23 @@ const keysUp = document.querySelector(".keys-up");
 const keysDown = document.querySelector(".keys-down");
 const text = document.querySelector(".text");
 const keysBackspace = document.querySelector(".keys-backspace");
+const keysBackquote = document.querySelector(".keys-backquote");
+const keys1 = document.querySelector(".keys1");
+const keys2 = document.querySelector(".keys2");
+const keys3 = document.querySelector(".keys3");
+const keys4 = document.querySelector(".keys4");
+const keys5 = document.querySelector(".keys5");
+const keys6 = document.querySelector(".keys6");
+const keys7 = document.querySelector(".keys7");
+const keys8 = document.querySelector(".keys8");
+const keys9 = document.querySelector(".keys9");
+const keys0 = document.querySelector(".keys0");
+const keysDash = document.querySelector(".keys-dash");
+const keysEquals = document.querySelector(".keys-equals");
+const bracketLeft = document.querySelector(".bracket-left");
+const bracketRight = document.querySelector(".bracket-right");
+const backslash = document.querySelector(".keys-slash");
+const keysEnter = document.querySelector(".keys-enter");
 
 for (let i = 0; i < keys.length; i++) {
   if (
@@ -35,13 +52,68 @@ for (let i = 0; i < keys.length; i++) {
 }
 
 window.addEventListener("keydown", function (event) {
-  // console.log(event.code);
   for (let i = 0; i < keys.length; i++) {
     if (
       event.key == keys[i].getAttribute("keyname") ||
-      event.key == keys[i].getAttribute("lowercasename")
+      event.key == keys[i].getAttribute("lowercasename") ||
+      event.key == keys[i].getAttribute("ru") ||
+      event.key == keys[i].getAttribute("rulowercasename")
     ) {
       keys[i].classList.add("active");
+    }
+    if (event.code == "Backquote") {
+      keysBackquote.classList.add("active");
+    }
+    if (event.code == "Digit1") {
+      keys1.classList.add("active");
+    }
+    if (event.code == "Digit2") {
+      keys2.classList.add("active");
+    }
+    if (event.code == "Digit3") {
+      keys3.classList.add("active");
+    }
+    if (event.code == "Digit4") {
+      keys4.classList.add("active");
+    }
+    if (event.code == "Digit5") {
+      keys5.classList.add("active");
+    }
+    if (event.code == "Digit6") {
+      keys6.classList.add("active");
+    }
+    if (event.code == "Digit7") {
+      keys7.classList.add("active");
+    }
+    if (event.code == "Digit8") {
+      keys8.classList.add("active");
+    }
+    if (event.code == "Digit9") {
+      keys9.classList.add("active");
+    }
+    if (event.code == "Digit0") {
+      keys0.classList.add("active");
+    }
+    if (event.code == "Minus") {
+      keysDash.classList.add("active");
+    }
+    if (event.code == "Equal") {
+      keysEquals.classList.add("active");
+    }
+    if (event.code == "Backspace") {
+      keysBackspace.classList.add("active");
+    }
+    if (event.code == "BracketLeft") {
+      bracketLeft.classList.add("active");
+    }
+    if (event.code == "BracketRight") {
+      bracketRight.classList.add("active");
+    }
+    if (event.code == "Backslash") {
+      backslash.classList.add("active");
+    }
+    if (event.code == "Tab") {
+      keysTab.classList.add("active");
     }
     if (event.code == "Space") {
       keysSpace.classList.add("active");
@@ -50,10 +122,13 @@ window.addEventListener("keydown", function (event) {
       keysDelete.classList.add("active");
     }
     if (event.code == "ShiftLeft") {
-      rightShift.classList.remove("active");
+      leftShift.classList.add("active");
     }
     if (event.code == "ShiftRight") {
-      leftShift.classList.remove("active");
+      rightShift.classList.add("active");
+    }
+    if (event.code == "Enter") {
+      keysEnter.classList.add("active");
     }
     if (event.code == "ControlLeft") {
       leftCtrl.classList.add("active");
@@ -123,9 +198,6 @@ window.addEventListener("keyup", function (event) {
     if (event.code == "Space") {
       keysSpace.classList.remove("active");
     }
-    if (event.code == "Delete") {
-      keysDelete.classList.remove("active");
-    }
     if (event.code == "ControlLeft") {
       leftCtrl.classList.remove("active");
     }
@@ -150,6 +222,69 @@ window.addEventListener("keyup", function (event) {
     if (event.code == "ArrowDown") {
       keysDown.classList.remove("active");
     }
+    if (event.code == "Backquote") {
+      keysBackquote.classList.add("active");
+    }
+    if (event.code == "Digit1") {
+      keys1.classList.remove("active");
+    }
+    if (event.code == "Digit2") {
+      keys2.classList.remove("active");
+    }
+    if (event.code == "Digit3") {
+      keys3.classList.remove("active");
+    }
+    if (event.code == "Digit4") {
+      keys4.classList.remove("active");
+    }
+    if (event.code == "Digit5") {
+      keys5.classList.remove("active");
+    }
+    if (event.code == "Digit6") {
+      keys6.classList.remove("active");
+    }
+    if (event.code == "Digit7") {
+      keys7.classList.remove("active");
+    }
+    if (event.code == "Digit8") {
+      keys8.classList.remove("active");
+    }
+    if (event.code == "Digit9") {
+      keys9.classList.remove("active");
+    }
+    if (event.code == "Digit0") {
+      keys0.classList.remove("active");
+    }
+    if (event.code == "Minus") {
+      keysDash.classList.remove("active");
+    }
+    if (event.code == "Equal") {
+      keysEquals.classList.remove("active");
+    }
+    if (event.code == "Backspace") {
+      keysBackspace.classList.remove("active");
+    }
+    if (event.code == "BracketLeft") {
+      bracketLeft.classList.remove("active");
+    }
+    if (event.code == "BracketRight") {
+      bracketRight.classList.remove("active");
+    }
+    if (event.code == "Backslash") {
+      backslash.classList.remove("active");
+    }
+    if (event.code == "Delete") {
+      keysDelete.classList.remove("active");
+    }
+    if (event.code == "ShiftLeft") {
+      leftShift.classList.remove("active");
+    }
+    if (event.code == "ShiftRight") {
+      rightShift.classList.remove("active");
+    }
+    if (event.code == "Enter") {
+      keysEnter.classList.remove("active");
+    }
   }
 });
 let capsLockFlag = false;
@@ -165,15 +300,6 @@ window.addEventListener("click", function (event) {
       text.value += " ";
     }
 
-    if (current.innerHTML == "Lang") {
-      if (langFlag) {
-        toEn();
-        langFlag = false;
-      } else {
-        toRu();
-        langFlag = true;
-      }
-    }
     if (current.innerHTML == "CapsLock") {
       if (capsLockFlag) {
         keysCapslock.classList.add("active");
@@ -186,11 +312,14 @@ window.addEventListener("click", function (event) {
       }
     }
     if (current.innerHTML == "Backspace" && text.value !== "") {
-      text.value = text.value.substring(0, text.value.length - 1);
-      keysBackspace.classList.add("active");
-      setTimeout(() => {
-        keysBackspace.classList.remove("active");
-      }, 400);
+      text.value =
+        text.value.substring(0, text.selectionStart - 1) +
+        text.value.substring(text.selectionEnd, text.value.length);
+    }
+    if (current.innerHTML == "Del") {
+      text.value =
+        text.value.substring(0, text.selectionStart) +
+        text.value.substring(text.selectionEnd + 1, text.value.length);
     }
     if (current.innerHTML == "") {
       keysSpace.classList.add("active");
@@ -198,8 +327,31 @@ window.addEventListener("click", function (event) {
         keysSpace.classList.remove("active");
       }, 400);
     }
+
+    if (current.innerHTML == "Lang") {
+      if (langFlag || localStorage.getItem("language") === "russian") {
+        localStorage.removeItem("language");
+        toEn();
+        langFlag = false;
+      } else {
+        localStorage.setItem("language", "russian");
+        toRu();
+        langFlag = true;
+      }
+      toChangeLang();
+    }
   }
+  text.focus();
 });
+
+function toChangeLang() {
+  if (localStorage.getItem("language") === "russian") {
+    toRu();
+  } else {
+    toEn();
+  }
+}
+toChangeLang();
 
 function toLowercase() {
   for (let key of keys) {
@@ -231,7 +383,7 @@ function toUppercase() {
         if (key.getAttribute("keyname").match(/[a-zа-яё;',.]/i)) {
           key.innerHTML = key.getAttribute("keyname");
         }
-      } 
+      }
     }
   }
 }
