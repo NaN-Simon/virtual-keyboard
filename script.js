@@ -52,7 +52,7 @@ for (let i = 0; i < keys.length; i++) {
 }
 
 window.addEventListener("keydown", function (event) {
-  console.log(event.code);
+  // console.log(event.code);
   // console.log(event.innerHTML);
   for (let i = 0; i < keys.length; i++) {
     if (
@@ -314,11 +314,14 @@ window.addEventListener("click", function (event) {
       }
     }
     if (current.innerHTML == "Backspace" && text.value !== "") {
-      text.value = text.value.substring(0, text.value.length - 1);
-      keysBackspace.classList.add("active");
-      setTimeout(() => {
-        keysBackspace.classList.remove("active");
-      }, 400);
+      text.value =
+        text.value.substring(0, text.selectionStart-1) +
+        text.value.substring(text.selectionEnd, text.value.length);
+    }
+    if (current.innerHTML == "Del") {
+      text.value =
+        text.value.substring(0, text.selectionStart) +
+        text.value.substring(text.selectionEnd + 1, text.value.length);
     }
     if (current.innerHTML == "") {
       keysSpace.classList.add("active");
