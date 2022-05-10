@@ -416,10 +416,6 @@ window.addEventListener("click", function (event) {
       text.selectionStart = start;
       text.selectionEnd = text.selectionStart;
       }
-      
-      // text.value =
-      //   text.value.substring(0, text.selectionStart - 1) +
-      //   text.value.substring(text.selectionEnd, text.value.length);
     }
     if (current.innerHTML == "Del") {
       let start = text.selectionStart;
