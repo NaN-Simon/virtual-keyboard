@@ -408,9 +408,17 @@ window.addEventListener("click", function (event) {
         text.value.substring(text.selectionEnd, text.value.length);
     }
     if (current.innerHTML == "Del") {
-      text.value =
-        text.value.substring(0, text.selectionStart) +
-        text.value.substring(text.selectionEnd + 1, text.value.length);
+      let start = text.selectionStart;
+        let end = text.selectionEnd;
+
+        if (text.selectionStart === text.selectionEnd) {
+          end++;
+        }
+
+        text.setRangeText("", start, end);
+        text.focus();
+        text.selectionStart = start;
+        text.selectionEnd = text.selectionStart;
     }
     if (current.innerHTML == "") {
       keysSpace.classList.add("active");
