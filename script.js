@@ -403,9 +403,23 @@ window.addEventListener("click", function (event) {
       }
     }
     if (current.innerHTML == "Backspace" && text.value !== "") {
-      text.value =
-        text.value.substring(0, text.selectionStart - 1) +
-        text.value.substring(text.selectionEnd, text.value.length);
+      let start = text.selectionStart;
+      let end = text.selectionEnd;
+
+      if (text.selectionStart === text.selectionEnd) {
+        start--;
+      }
+
+      if(text.selectionStart !=0){
+        text.setRangeText("", start, end);
+        text.focus();
+      text.selectionStart = start;
+      text.selectionEnd = text.selectionStart;
+      }
+      
+      // text.value =
+      //   text.value.substring(0, text.selectionStart - 1) +
+      //   text.value.substring(text.selectionEnd, text.value.length);
     }
     if (current.innerHTML == "Del") {
       let start = text.selectionStart;
