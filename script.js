@@ -34,7 +34,7 @@ body.innerHTML = `
           <div ru="З" en="P" class="keys">P</div>
           <div ru="Х" en="[" class="keys bracket-left">[</div>
           <div ru="Ъ" en="]" class="keys bracket-right">]</div>
-          <div class="keys keys-slash">\</div>
+          <div class="keys keys-slash">\\</div>
           <div class="keys keys-delete">Del</div>
         </div>
         <div class="row">
@@ -63,7 +63,7 @@ body.innerHTML = `
           <div ru="Ь" en="M" class="keys">M</div>
           <div ru="Б" en="," class="keys">,</div>
           <div ru="Ю" en="." class="keys">.</div>
-          <div ru="." en="/" class="keys">/</div>
+          <div ru="." en="/" class="keys">&#47;</div>
           <div class="keys keys-up">△</div>
           <div class="keys keys-shift right-shift">Shift</div>
         </div>
@@ -488,7 +488,7 @@ function toRu() {
 function toEn() {
   for (let key of keys) {
     if (key.getAttribute("ru")) {
-      key.innerHTML = key.getAttribute("keyname");
+      key.innerHTML = key.getAttribute("en");
     }
   }
 }
